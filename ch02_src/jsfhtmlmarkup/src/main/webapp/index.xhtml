@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">      
+    <head jsf:id="head">
+        <title>JSF Page with HTML5 Markup</title>
+        <link jsf:library="css" jsf:name="styles.css" rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+    </head>
+    <body jsf:id="body">
+        <form jsf:prependId="false">
+            <table style="border-spacing: 0; border-collapse: collapse">
+                <tr>
+                    <td class="rightAlign"><label jsf:for="firstName">First Name</label></td>
+                    <td class="leftAlign"><input type="text" jsf:id="firstName" jsf:value="#{customer.firstName}"/></td>
+                </tr>
+                 <tr>
+                    <td class="rightAlign"><label jsf:for="lastName">Last Name</label></td>
+                    <td class="leftAlign"><input type="text" jsf:id="lastName" jsf:value="#{customer.lastName}"/></td>
+                </tr>
+                 <tr>
+                    <td class="rightAlign"><label jsf:for="email">Email Address</label></td>
+                    <td class="leftAlign"><input type="email" jsf:id="email" jsf:value="#{customer.email}"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" jsf:action="confirmation" value="Submit"/></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+  <h:head>
+    <title>JSF Ajax Demo</title>
+  </h:head>
+  <h:body>
+    <h2>JSF Ajax Demo</h2>
+    <h:form>
+      <h:messages/>
+      <h:panelGrid columns="2">
+
+        <h:outputText value="Echo input:"/>
+        <h:inputText id="textInput" value="#{controller.text}">
+          <f:ajax render="textVal" event="keyup"/>
+        </h:inputText>
+
+        <h:outputText value="Echo output:"/>
+        <h:outputText id="textVal" value="#{controller.text}"/>
+      </h:panelGrid>
+      <hr/>
+      <h:panelGrid columns="2">
+        <h:panelGroup/>
+        <h:panelGroup/>
+        <h:outputText value="First Operand:"/>
+        <h:inputText id="first" value="#{controller.firstOperand}" size="3"/>
+        <h:outputText value="Second Operand:"/>
+        <h:inputText id="second" value="#{controller.secondOperand}" size="3"/>
+        <h:outputText value="Total:"/>
+        <h:outputText id="sum" value="#{controller.total}"/>
+        <h:commandButton actionListener="#{controller.calculateTotal}"
+                         value="Calculate Sum">
+          <f:ajax execute="first second" render="sum"/>
+        </h:commandButton>
+
+      </h:panelGrid>
+    </h:form>
+  </h:body>
+</html>

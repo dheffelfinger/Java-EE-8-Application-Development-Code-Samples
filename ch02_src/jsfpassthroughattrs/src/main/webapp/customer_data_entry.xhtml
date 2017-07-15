@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Enter Customer Data</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="styles.css"/>
+        <h:form id="customerForm">
+            <h:messages/>
+            <h:panelGrid columns="2"
+                         columnClasses="rightAlign,leftAlign">
+                <h:outputLabel for="firstName" value="First Name:">
+                </h:outputLabel>
+                <h:inputText id="firstName"
+                             label="First Name"
+                             value="#{customer.firstName}"
+                             required="true"
+                             p:placeholder="First Name">
+                    <f:validateLength minimum="2" maximum="30">
+                    </f:validateLength>
+                </h:inputText>
+                <h:outputLabel for="lastName" value="Last Name:">
+                </h:outputLabel>
+                <h:inputText id="lastName"
+                             label="Last Name"
+                             value="#{customer.lastName}"
+                             required="true"
+                             p:placeholder="Last Name">
+                    <f:validateLength minimum="2" maximum="30">
+                    </f:validateLength>
+                </h:inputText>
+                <h:outputLabel for="email" value="Email:">
+                </h:outputLabel>
+                <h:inputText id="email" 
+                             label="Email" 
+                             value="#{customer.email}"
+                             p:placeholder="Email Address">
+                    <f:validateLength minimum="3" maximum="30">
+                    </f:validateLength>
+                </h:inputText>
+                <h:panelGroup></h:panelGroup>
+                <h:commandButton action="confirmation" value="Save">
+                </h:commandButton>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

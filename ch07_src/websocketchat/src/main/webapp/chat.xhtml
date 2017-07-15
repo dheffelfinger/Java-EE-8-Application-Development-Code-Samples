@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+        <title>WebSocket Chat</title>
+        <meta name="viewport" content="width=device-width"/>
+        <script type="text/javascript">
+            var websocket;
+            function init() {
+                websocket = new WebSocket('ws://localhost:8080/websocketchat/websocketchat');
+                
+                websocket.onopen = function(event) {
+                    websocketOpen(event)
+                };
+                websocket.onmessage = function(event) {
+                    websocketMessage(event)
+                };
+                websocket.onerror = function(event) {
+                    websocketError(event)
+                };
+                
+            }
+
+            function websocketOpen(event) {
+                console.log("webSocketOpen invoked");
+            }
+
+            function websocketMessage(event) {
+                console.log("websocketMessage invoked");
+                document.getElementById('chatwindow').value += '\r' + event.data;
+            }
+
+            function websocketError(event) {
+                console.log("websocketError invoked");
+            }
+
+            function sendMessage() {
+                var userName = document.getElementById('userName').value;
+                var msg = document.getElementById('chatinput').value;
+
+                websocket.send(userName + ": " + msg);
+            }
+            
+            function closeConnection(){
+                websocket.close();
+            }
+
+            window.addEventListener("load", init, false);
+        </script>
+    </head>
+    <body>
+        <form jsf:prependId="false">
+            <input type="hidden" id="userName" value="#{user.userName}"/>
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td><label for="chatwindow">Chat Window</label></td>
+                        <td><textArea id="chatwindow" rows="10"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="chatinput">Type Something Here</label></td>
+                        <td><input type="text" id="chatinput"/> <input type="button" id="sendBtn" value="Send" onclick="sendMessage()"/></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="button" id="exitBtn" value="Exit" onclick="closeConnection()"/></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </form>
+    </body>
+</html>

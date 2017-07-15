@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Customer Information</title>
+    </h:head>
+    <h:body>
+        <h3>Enter Customer Information (Page 2 of 4)</h3>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="addrLine1" value="Line 1"/>
+                <h:inputText id="addrLine1" value="${customer.addrLine1}"/>
+                <h:outputLabel for="addrLine2" value="Line 2"/>
+                <h:inputText id="addrLine2" value="${customer.addrLine2}"/>
+                <h:outputLabel for="city" value="City"/>
+                <h:inputText id="city" value="${customer.addrCity}"/>
+                <h:outputLabel for="state" value="State"/>
+                <h:selectOneMenu id="state" value="${customer.state}">
+                    <f:selectItem itemLabel="" itemValue=""/>
+                    <f:selectItem itemLabel="Alabama" itemValue="AL"/>
+                    <f:selectItem itemLabel="Alaska" itemValue="AK"/>
+                    <f:selectItem itemLabel="Arizona" itemValue="AZ"/>
+                    <f:selectItem itemLabel="Arkansas" itemValue="AR"/>
+                    <f:selectItem itemLabel="California" itemValue="CA"/>
+                </h:selectOneMenu>
+                <h:outputLabel for="zip" value="Zip"/>
+                <h:inputText id="zip" value="${customer.zip}"/>
+                <h:commandButton value="Previous" action="customerinfo"/>
+                <h:commandButton value="Next" action="customerinfo-page3"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

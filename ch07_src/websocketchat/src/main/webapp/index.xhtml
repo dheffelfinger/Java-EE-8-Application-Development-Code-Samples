@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+        <title>WebSocket Chat</title>
+    </head>
+    <body>
+        <h2>WebSocket Chat</h2>
+        <form jsf:prependId="false">
+            <label for="username">User Name:</label><input type="text" jsf:id="username" jsf:value="#{user.userName}"/>
+            <input type="submit" value="Submit" jsf:action="chat"/>
+        </form>
+    </body>
+</html>
+

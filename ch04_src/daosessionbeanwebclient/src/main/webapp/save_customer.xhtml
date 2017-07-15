@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Save Customer</title>
+    </head>
+    <body>
+        <h:form>
+            <h:messages></h:messages>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td align="right">First Name:</td>
+                    <td align="left"><h:inputText label="First Name"
+                                                  value="#{customerController.firstName}" required="true">
+                            <f:validateLength minimum="2" maximum="30"></f:validateLength>
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td align="right">Last Name:</td>
+                    <td align="left"><h:inputText label="Last Name"
+                                                  value="#{customerController.lastName}" required="true">
+                            <f:validateLength minimum="2" maximum="30"></f:validateLength>
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td align="right">Email:</td>
+                    <td align="left"><h:inputText label="Email"
+                                                  value="#{customerController.email}">
+                            <f:validateLength minimum="2" maximum="30"></f:validateLength>
+                        </h:inputText></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td align="left"><h:commandButton
+                            action="#{customerController.saveCustomer}" value="Save"></h:commandButton>
+                    </td>
+                </tr>
+            </table>
+        </h:form>
+    </body>
+</html>

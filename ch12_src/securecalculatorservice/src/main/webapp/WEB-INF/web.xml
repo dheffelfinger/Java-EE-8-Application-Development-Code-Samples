@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Calculator Web Service</web-resource-name>
+      <url-pattern>/CalculatorService/*</url-pattern>
+      <http-method>POST</http-method>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>file</realm-name>
+  </login-config>
+</web-app>

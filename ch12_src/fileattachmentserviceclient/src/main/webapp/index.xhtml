@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>File Attachment Service Client</title>
+    </h:head>
+    <h:body>
+        <h:graphicImage library="img" name="logo.png"/>
+        <p>Click on the button to invoke the web service, passing the above image as an attachment.</p>
+        <h:form>
+            <h:commandButton value="Invoke Web Service" actionListener="#{fileAttachmentServiceClientController.invokeWebService()}"/>
+        </h:form>
+    </h:body>
+</html>
+

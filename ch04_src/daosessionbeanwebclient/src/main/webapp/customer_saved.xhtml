@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>Customer Saved Successfully</title>
+    </head>
+    <body>
+        <p>The following data was saved to the database:</p>
+        <f:view>
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td align="left">First Name:&nbsp;</td>
+                    <td align="left"><h:outputText value="#{customerController.firstName}"></h:outputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">Last Name:&nbsp;</td>
+                    <td align="left"><h:outputText value="#{customerController.lastName}"></h:outputText>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">Email:&nbsp;</td>
+                    <td align="left"><h:outputText value="#{customerController.email}"></h:outputText>
+                    </td>
+                </tr>
+            </table>
+        </f:view>
+    </body>
+</html>

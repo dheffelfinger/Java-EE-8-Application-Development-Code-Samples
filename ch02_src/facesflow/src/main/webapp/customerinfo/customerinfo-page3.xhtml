@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Customer Information</title>
+    </h:head>
+    <h:body>
+        <h3>Enter Customer Information (Page 3 of 4)</h3>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="phoneHome" value="Home Phone"/>
+                <h:inputText id="phoneHome" value="${customer.phoneHome}"/>
+                <h:outputLabel for="phoneWork" value="Work Phone"/>
+                <h:inputText id="phoneWork" value="${customer.phoneWork}"/>
+                <h:outputLabel for="phoneMobile" value="Mobile Phone"/>
+                <h:inputText id="phoneMobile" value="${customer.phoneMobile}"/>
+                <h:commandButton value="Previous" action="#{customerInfoController.navigateToPage2}"/>
+                <h:commandButton value="Next" action="customerinfo-page4"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Confirmation</title>
+    </h:head>
+    <h:body>
+        <h3>Enter Customer Information (Page 4 of 4)</h3>
+        <p>You entered the following information:</p>
+        First Name: ${customer.firstName}<br/>
+        Middle Name: ${customer.middleName}<br/>
+        Last Name: ${customer.lastName}<br/>
+        Address Line 1: ${customer.addrLine1}<br/>
+        Address Line 2: ${customer.addrLine2}<br/>
+        City: ${customer.addrCity}<br/>
+        State: ${customer.state}<br/>
+        Zip: ${customer.zip}<br/>
+        Home Phone: ${customer.phoneHome}<br/>
+        Work Phone: ${customer.phoneWork}<br/>
+        Mobile Phone${customer.phoneMobile}<br/>
+        <p>Is this correct?</p>
+        <h:form>
+            <h:panelGroup>
+                <h:commandButton value="Yes (Continue)" action="customerinfo-return"/>&#160;<h:commandButton value="No (Go back)" action="customerinfo"/>
+            </h:panelGroup>
+        </h:form>
+    </h:body>
+</html>
+

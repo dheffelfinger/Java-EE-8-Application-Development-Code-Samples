@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head jsf:id="head">
+        <title>Customer Data Entered</title>
+        <link jsf:library="css" jsf:name="styles.css" rel="stylesheet" type="text/css" href="resources/css/styles.css"/>
+    </head>
+    <body jsf:id="body">
+        <table>
+            <tr>
+                <td class="rightAlign">
+                    First Name:
+                </td>
+                <td class="leftAlign">
+                    #{customer.firstName}
+                </td>
+            </tr>
+            <tr>
+                <td class="rightAlign">
+                    Last Name:
+                </td>
+                <td class="leftAlign">
+                    #{customer.lastName}
+                </td>
+            </tr>
+            <tr>
+                <td class="rightAlign">
+                    Email:
+                </td>
+                <td class="leftAlign">
+                    #{customer.email}
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

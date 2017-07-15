@@ -1,0 +1,15 @@
+root { 
+  display: block;
+}
+
+.leftAlign {
+  text-align: left;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.errorMsg {
+  color: red;
+}
