@@ -13,6 +13,10 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
     </servlet-mapping>
+    <resource-ref>
+        <res-ref-name>jsf/ProjectStage</res-ref-name>
+        <res-type>java.lang.String</res-type>
+    </resource-ref>
     <session-config>
         <session-timeout>
             30
