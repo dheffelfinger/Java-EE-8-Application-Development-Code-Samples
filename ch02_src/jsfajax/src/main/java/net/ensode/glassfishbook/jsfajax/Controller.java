@@ -1,54 +1,55 @@
 package net.ensode.glassfishbook.jsfajax;
 
+import java.io.Serializable;
 import javax.faces.event.ActionEvent;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
 @Named
 @ViewScoped
-public class Controller {
+public class Controller implements Serializable {
 
-  private String text;
-  private int firstOperand;
-  private int secondOperand;
-  private int total;
-  
-  public Controller() {
-  }
+    private String text;
+    private int firstOperand;
+    private int secondOperand;
+    private int total;
 
-  public void calculateTotal(ActionEvent actionEvent) {
-    total = firstOperand + secondOperand;
-  }
+    public Controller() {
+    }
 
-  public String getText() {
-    return text;
-  }
+    public void calculateTotal(ActionEvent actionEvent) {
+        total = firstOperand + secondOperand;
+    }
 
-  public void setText(String text) {
-    this.text = text;
-  }
+    public String getText() {
+        return text;
+    }
 
-  public int getFirstOperand() {
-    return firstOperand;
-  }
+    public void setText(String text) {
+        this.text = text;
+    }
 
-  public void setFirstOperand(int firstOperand) {
-    this.firstOperand = firstOperand;
-  }
+    public int getFirstOperand() {
+        return firstOperand;
+    }
 
-  public int getSecondOperand() {
-    return secondOperand;
-  }
+    public void setFirstOperand(int firstOperand) {
+        this.firstOperand = firstOperand;
+    }
 
-  public void setSecondOperand(int secondOperand) {
-    this.secondOperand = secondOperand;
-  }
+    public int getSecondOperand() {
+        return secondOperand;
+    }
 
-  public int getTotal() {
-    return total;
-  }
+    public void setSecondOperand(int secondOperand) {
+        this.secondOperand = secondOperand;
+    }
 
-  public void setTotal(int total) {
-    this.total = total;
-  }
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
 }
