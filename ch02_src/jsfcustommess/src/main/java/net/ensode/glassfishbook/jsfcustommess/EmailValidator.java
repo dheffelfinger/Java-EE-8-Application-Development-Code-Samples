@@ -7,7 +7,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 @FacesValidator(value = "emailValidator")
 public class EmailValidator implements Validator {
@@ -16,8 +16,8 @@ public class EmailValidator implements Validator {
   public void validate(FacesContext facesContext,
       UIComponent uiComponent,
       Object value) throws ValidatorException {
-    org.apache.commons.validator.EmailValidator emailValidator =
-        org.apache.commons.validator.EmailValidator.getInstance();
+    org.apache.commons.validator.routines.EmailValidator emailValidator =
+        org.apache.commons.validator.routines.EmailValidator.getInstance();
     HtmlInputText htmlInputText = (HtmlInputText) uiComponent;
 
     String email = (String) value;
