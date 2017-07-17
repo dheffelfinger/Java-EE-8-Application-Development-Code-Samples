@@ -1,4 +1,4 @@
-package net.ensode.glassfishbook.jsfajax;
+package net.ensode.javaee8book.jsfajax;
 
 import java.io.Serializable;
 import javax.faces.event.ActionEvent;
