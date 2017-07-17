@@ -1,4 +1,4 @@
-package net.ensode.glassfishbook.jsfcustommess;
+package net.ensode.javaee8book.jsfcustommess;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;

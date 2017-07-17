@@ -1,4 +1,4 @@
-package net.ensode.glassfishbook.jsfcustommess;
+package net.ensode.javaee8book.jsfcustommess;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
