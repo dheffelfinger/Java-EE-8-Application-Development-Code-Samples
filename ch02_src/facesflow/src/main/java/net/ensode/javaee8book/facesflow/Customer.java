@@ -1,4 +1,4 @@
-package net.ensode.glassfishbook.facesflow;
+package net.ensode.javaee8book.facesflow;
 
 import java.io.Serializable;
 import javax.faces.flow.FlowScoped;
