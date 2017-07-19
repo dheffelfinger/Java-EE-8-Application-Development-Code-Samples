@@ -1,4 +1,4 @@
-package net.ensode.glassfishbook.jsfhtmlmarkup;
+package net.ensode.javaeebook.jsfhtmlmarkup;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
