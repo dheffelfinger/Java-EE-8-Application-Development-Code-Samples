@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>JSF Arbitrary Messages Demo</title>
+    </h:head>
+    <h:body>
+        <h:outputStylesheet library="css" name="styles.css"/>
+        <h:messages id="messages"/>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:panelGrid columns="2"
+                             columnClasses="rightAlign,leftAlign">
+                    <h:outputLabel for="firstName" value="First Name:">
+                    </h:outputLabel>
+                    <h:inputText id="firstName"
+                                 label="First Name"
+                                 value="#{customer.firstName}"
+                                 required="true">
+                        <f:validateLength minimum="2" maximum="30">
+                        </f:validateLength>
+                    </h:inputText>
+                    <h:outputLabel for="lastName" value="Last Name:">
+                    </h:outputLabel>
+                    <h:inputText id="lastName"
+                                 label="Last Name"
+                                 value="#{customer.lastName}"
+                                 required="true">
+                        <f:validateLength minimum="2" maximum="30">
+                        </f:validateLength>
+                    </h:inputText>
+                    <h:outputLabel for="email" value="Email:">
+                    </h:outputLabel>
+                    <h:inputText id="email" 
+                                 label="Email" 
+                                 value="#{customer.email}">
+                        <f:validateLength minimum="3" maximum="30">
+                        </f:validateLength>
+                    </h:inputText>
+                    <h:panelGroup></h:panelGroup>
+                    <h:commandButton actionListener="#{arbitraryMessageController.saveData()}" value="Save">
+                        <f:ajax render="messages"/>
+                    </h:commandButton>
+                </h:panelGrid>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
