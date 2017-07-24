@@ -10,40 +10,38 @@
         <h:outputStylesheet library="css" name="styles.css"/>
         <h:messages id="messages" />
         <h:form>
-            <h:panelGrid columns="2">
-                <h:panelGrid columns="2"
-                             columnClasses="rightAlign,leftAlign">
-                    <h:outputLabel for="firstName" value="First Name:">
-                    </h:outputLabel>
-                    <h:inputText id="firstName"
-                                 label="First Name"
-                                 value="#{customer.firstName}"
-                                 required="true">
-                        <f:validateLength minimum="2" maximum="30">
-                        </f:validateLength>
-                    </h:inputText>
-                    <h:outputLabel for="lastName" value="Last Name:">
-                    </h:outputLabel>
-                    <h:inputText id="lastName"
-                                 label="Last Name"
-                                 value="#{customer.lastName}"
-                                 required="true">
-                        <f:validateLength minimum="2" maximum="30">
-                        </f:validateLength>
-                    </h:inputText>
-                    <h:outputLabel for="email" value="Email:">
-                    </h:outputLabel>
-                    <h:inputText id="email" 
-                                 label="Email" 
-                                 value="#{customer.email}">
-                        <f:validateLength minimum="3" maximum="30">
-                        </f:validateLength>
-                    </h:inputText>
-                    <h:panelGroup></h:panelGroup>
-                    <h:commandButton actionListener="#{arbitraryMessageController.saveData()}" value="Save">
-                        <f:ajax render="messages"/>
-                    </h:commandButton>
-                </h:panelGrid>
+            <h:panelGrid columns="2"
+                         columnClasses="rightAlign,leftAlign">
+                <h:outputLabel for="firstName" value="First Name:">
+                </h:outputLabel>
+                <h:inputText id="firstName"
+                             label="First Name"
+                             value="#{customer.firstName}"
+                             required="true">
+                    <f:validateLength minimum="2" maximum="30">
+                    </f:validateLength>
+                </h:inputText>
+                <h:outputLabel for="lastName" value="Last Name:">
+                </h:outputLabel>
+                <h:inputText id="lastName"
+                             label="Last Name"
+                             value="#{customer.lastName}"
+                             required="true">
+                    <f:validateLength minimum="2" maximum="30">
+                    </f:validateLength>
+                </h:inputText>
+                <h:outputLabel for="email" value="Email:">
+                </h:outputLabel>
+                <h:inputText id="email" 
+                             label="Email" 
+                             value="#{customer.email}">
+                    <f:validateLength minimum="3" maximum="30">
+                    </f:validateLength>
+                </h:inputText>
+                <h:panelGroup></h:panelGroup>
+                <h:commandButton actionListener="#{arbitraryMessageController.saveData()}" value="Save">
+                    <f:ajax render="messages"/>
+                </h:commandButton>
             </h:panelGrid>
         </h:form>
     </h:body>
