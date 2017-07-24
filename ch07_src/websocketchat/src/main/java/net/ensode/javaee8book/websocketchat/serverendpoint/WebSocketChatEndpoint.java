@@ -1,8 +1,3 @@
-/*
- * 
- * 
- * 
- */
 package net.ensode.javaee8book.websocketchat.serverendpoint;
 
 import java.io.IOException;
@@ -14,10 +9,6 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
 
-/**
- *
- * @author heffel
- */
 @ServerEndpoint("/websocketchat")
 public class WebSocketChatEndpoint {
 
