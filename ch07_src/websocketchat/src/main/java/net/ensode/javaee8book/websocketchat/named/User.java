@@ -1,16 +1,7 @@
-/*
- * 
- * 
- * 
- */
 package net.ensode.javaee8book.websocketchat.named;
 
 import javax.enterprise.inject.Model;
 
-/**
- *
- * @author heffel
- */
 @Model
 public class User {
 
