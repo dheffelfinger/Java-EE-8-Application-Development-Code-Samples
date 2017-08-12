@@ -7,12 +7,10 @@
         <title>JSF WebSocket Demo</title>
     </h:head>
     <h:body>
-        <f:websocket channel="myChannel" onmessage="socketListener" />
-
         <h:form prependId="false">
             <h:panelGrid columns="2">
                 <h:outputLabel for="chatWindow" value="Chat Window:"/>
-                <h:inputTextarea id="chatWindow" value="#{jsfWebSocketMessageSender.chatWindowContents}" rows="10"/>
+                <textarea id="chatWindow" rows="10"/>
                 <h:outputLabel for="chatInput" value="Type something here:"/>
                 <h:inputText id="chatInput" value="#{jsfWebSocketController.message}"/>
                 <h:panelGroup/>
@@ -21,12 +19,19 @@
                 </h:commandButton>
             </h:panelGrid>
         </h:form>
+        <f:websocket channel="myChannel" onmessage="socketListener" />
 
         <script type="text/javascript">
             function socketListener(message, channel, event) {
                 console.log("socketListener invoked");
-                var textarea = document.getElementById('chatWindow');
-                textarea.scrollTop = textarea.scrollHeight;
+                var textArea = document.getElementById('chatWindow');
+                var textAreaValue = textArea.value;
+                if (textAreaValue.trim() !== '') {
+                    textAreaValue += "\n";
+                }
+                textAreaValue += message;
+                textArea.value = textAreaValue;
+                textArea.scrollTop = textArea.scrollHeight;
             }
         </script>
     </h:body>

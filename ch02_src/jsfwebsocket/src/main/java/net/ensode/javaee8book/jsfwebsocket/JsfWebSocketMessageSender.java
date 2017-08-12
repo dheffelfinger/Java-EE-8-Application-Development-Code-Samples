@@ -1,5 +1,6 @@
 package net.ensode.javaee8book.jsfwebsocket;
 
+import java.io.Serializable;
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.push.Push;
 import javax.faces.push.PushContext;
@@ -8,26 +9,14 @@ import javax.inject.Named;
 
 @Named
 @ApplicationScoped
-public class JsfWebSocketMessageSender {
+public class JsfWebSocketMessageSender implements Serializable {
 
     @Inject
     @Push
     private PushContext myChannel;
 
-    private String chatWindowContents = "";
-
     public void send(String message) {
         System.out.println("Sending message: " + message);
-        chatWindowContents += message + "\n";
         myChannel.send(message);
     }
-
-    public String getChatWindowContents() {
-        return chatWindowContents;
-    }
-
-    public void setChatWindowContents(String chatWindowContents) {
-        this.chatWindowContents = chatWindowContents;
-    }
-
 }
