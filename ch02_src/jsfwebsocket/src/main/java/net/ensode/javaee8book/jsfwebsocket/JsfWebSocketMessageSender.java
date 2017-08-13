@@ -13,10 +13,10 @@ public class JsfWebSocketMessageSender implements Serializable {
 
     @Inject
     @Push
-    private PushContext myChannel;
+    private PushContext pushContext;
 
     public void send(String message) {
         System.out.println("Sending message: " + message);
-        myChannel.send(message);
+        pushContext.send(message);
     }
 }
