@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.PushBuilder;
 
-/**
- *
- * @author davidheffelfinger
- */
 @WebServlet(name = "ServletPushDemoServlet", urlPatterns = {"/ServletPushDemoServlet"})
 public class ServletPushDemoServlet extends HttpServlet {
 
