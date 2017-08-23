@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-shared-configuration>
+    <!--
+This file contains additional configuration written by modules in the NetBeans IDE.
+The configuration is intended to be shared among all the users of project and
+therefore it is assumed to be part of version control checkout.
+Without this configuration present, some functionality in the IDE may be limited or fail altogether.
+-->
+    <libraries xmlns="http://www.netbeans.org/ns/cdnjs-libraries/1">
+        <library name="jquery" version="3.2.1">
+            <file localPath="src/main/webapp/js/libs/jquery/core.js" path="core.js"/>
+            <file localPath="src/main/webapp/js/libs/jquery/jquery.js" path="jquery.js"/>
+            <file localPath="src/main/webapp/js/libs/jquery/jquery.min.js" path="jquery.min.js"/>
+            <file localPath="src/main/webapp/js/libs/jquery/jquery.min.map" path="jquery.min.map"/>
+            <file localPath="src/main/webapp/js/libs/jquery/jquery.slim.js" path="jquery.slim.js"/>
+            <file localPath="src/main/webapp/js/libs/jquery/jquery.slim.min.js" path="jquery.slim.min.js"/>
+            <file localPath="src/main/webapp/js/libs/jquery/jquery.slim.min.map" path="jquery.slim.min.map"/>
+        </library>
+        <library name="twitter-bootstrap" version="3.3.7">
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap-theme.css" path="css/bootstrap-theme.css"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap-theme.css.map" path="css/bootstrap-theme.css.map"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap-theme.min.css" path="css/bootstrap-theme.min.css"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap-theme.min.css.map" path="css/bootstrap-theme.min.css.map"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap.css" path="css/bootstrap.css"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap.css.map" path="css/bootstrap.css.map"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap.min.css" path="css/bootstrap.min.css"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/css/bootstrap.min.css.map" path="css/bootstrap.min.css.map"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/fonts/glyphicons-halflings-regular.eot" path="fonts/glyphicons-halflings-regular.eot"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/fonts/glyphicons-halflings-regular.svg" path="fonts/glyphicons-halflings-regular.svg"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/fonts/glyphicons-halflings-regular.ttf" path="fonts/glyphicons-halflings-regular.ttf"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/fonts/glyphicons-halflings-regular.woff" path="fonts/glyphicons-halflings-regular.woff"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/fonts/glyphicons-halflings-regular.woff2" path="fonts/glyphicons-halflings-regular.woff2"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/js/bootstrap.js" path="js/bootstrap.js"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/js/bootstrap.min.js" path="js/bootstrap.min.js"/>
+            <file localPath="src/main/webapp/js/libs/twitter-bootstrap/js/npm.js" path="js/npm.js"/>
+        </library>
+    </libraries>
+    <properties xmlns="http://www.netbeans.org/ns/maven-properties-data/1">
+        <!--
+Properties that influence various parts of the IDE, especially code formatting and the like. 
+You can copy and paste the single properties, into the pom.xml file and the IDE will pick them up.
+That way multiple projects can share the same settings (useful for formatting rules for example).
+Any value defined here will override the pom.xml file value but is only applicable to the current project.
+-->
+        <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_j2eeVersion>1.7-web</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_j2eeVersion>
+        <org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>gfv3ee6</org-netbeans-modules-maven-j2ee.netbeans_2e_hint_2e_deploy_2e_server>
+        <org-netbeans-modules-javascript2-requirejs.enabled>true</org-netbeans-modules-javascript2-requirejs.enabled>
+        <org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>js/libs</org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>
+        <org-netbeans-modules-maven-jaxws.rest_2e_config_2e_type>ide</org-netbeans-modules-maven-jaxws.rest_2e_config_2e_type>
+    </properties>
+</project-shared-configuration>
