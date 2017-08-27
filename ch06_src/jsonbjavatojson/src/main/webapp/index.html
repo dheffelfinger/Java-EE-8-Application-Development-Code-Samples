@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Search Customer By First Name</title>
+
+        <!-- Bootstrap -->
+        <link href="./js/libs/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="container" style="width: 370px !important;">
+            <div id="msg">
+            </div>
+            <h3>Search Customer by First Name</h3>
+            <form id="customerForm">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" maxlength="10" class="form-control" id="firstName" name="firstName"  placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <button type="button" id="searchBtn" class="btn btn-primary">Search</button>
+                </div>
+                <div id="searchResultsDiv" style='font-family: "Courier New", monospace; white-space: pre;'>
+                </div>
+            </form>
+        </div>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="./js/libs/jquery/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="./js/libs/twitter-bootstrap/js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#searchBtn").on('click', function () {
+                    var rootUrl = "http://localhost:8080/jsonbjavatojson/webresources/customersearchcontroller/";
+                    var lastName = $("#firstName").val();
+                    var url = rootUrl + lastName;
+                    $.ajax({
+                        crossDomain: true,
+                        dataType: "json",
+                        type: "GET",
+                        url: url,
+                    }).done(function (data, textStatus, jqXHR) {
+                        if (jqXHR.status === 200) {
+                            $("#msg").removeClass();
+                            $("#msg").toggleClass("alert alert-success");
+                            $("#msg").html("Customer search successful.");
+                            console.log(JSON.stringify(data, null, 2));
+                            $("#searchResultsDiv").text(JSON.stringify(data, null, 2));
+                        } else {
+                            $("#msg").removeClass();
+                            $("#msg").toggleClass("alert alert-danger");
+                            $("#msg").html("There was an error searching customers.");
+                        }
+                    }).fail(function (data, textStatus, jqXHR) {
+                        $("#msg").removeClass();
+                        $("#msg").toggleClass("alert alert-danger");
+                        $("#msg").html("There was an error searching customers.");
+                        console.log("data = " + JSON.stringify(data));
+                        console.log("textStatus = " + textStatus);
+                        console.log("jqXHR = " + jqXHR);
+                        console.log("jqXHR.status = " + jqXHR.status);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
