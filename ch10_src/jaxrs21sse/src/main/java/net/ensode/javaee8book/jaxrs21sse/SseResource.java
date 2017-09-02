@@ -1,6 +1,11 @@
 package net.ensode.javaee8book.jaxrs21sse;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.ws.rs.GET;
@@ -16,27 +21,29 @@ import javax.ws.rs.sse.SseEventSink;
 public class SseResource {
 
     List<Float> stockTickerValues = null;
+    Executor executor = Executors.newSingleThreadExecutor();
 
     @GET
     @Produces(MediaType.SERVER_SENT_EVENTS)
     public void sendEvents(@Context SseEventSink sseEventSink, @Context Sse sse) {
         initializeStockTickerValues();
-        new Thread(() -> {
+        executor.execute(() -> {
             stockTickerValues.forEach(value -> {
                 try {
+                    TimeUnit.SECONDS.sleep(5);
                     System.out.println(String.format("Sending the following value: %.2f", value));
                     final OutboundSseEvent outboundSseEvent = sse.newEventBuilder()
                             .name("ENSD stock ticker value")
                             .data(String.class, String.format("%.2f", value))
                             .build();
                     sseEventSink.send(outboundSseEvent);
-                    Thread.sleep(5000);
-                } catch (InterruptedException ie) {
-                    ie.printStackTrace();
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
                 }
+
             });
 
-        }).start();
+        });
     }
 
     private void initializeStockTickerValues() {
