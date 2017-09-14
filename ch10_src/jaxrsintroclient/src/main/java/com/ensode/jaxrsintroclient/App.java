@@ -4,6 +4,7 @@ import com.ensode.jaxbxmlconversion.entity.Customer;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.MediaType;
 
 
 public class App {
@@ -20,7 +21,7 @@ public class App {
         client.target(
                 "http://localhost:8080/jaxbxmlconversion/resources/customer").
                 request().put(
-                        Entity.entity(customer, "text/xml"),
+                        Entity.entity(customer, MediaType.TEXT_XML),
                         Customer.class);
     }
 }

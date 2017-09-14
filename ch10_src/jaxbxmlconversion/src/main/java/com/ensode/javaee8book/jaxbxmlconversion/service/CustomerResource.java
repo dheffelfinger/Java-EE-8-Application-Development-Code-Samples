@@ -8,6 +8,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 /**
  *
@@ -24,7 +25,7 @@ public class CustomerResource {
   }
 
   @GET
-  @Produces("text/xml")
+  @Produces(MediaType.TEXT_XML)
   public Customer getCustomer(Long customerId) {
     //in a "real" RESTful service, we would retrieve data from a database
     //then return an XML representation of the data.
@@ -36,7 +37,7 @@ public class CustomerResource {
   }
 
   @POST
-  @Consumes("text/xml")
+  @Consumes(MediaType.TEXT_XML)
   public void updateCustomer(Customer customer) {
     //in a "real" RESTful service, we would parse the XML
     //received in the customer XML parameter, then update
@@ -51,7 +52,7 @@ public class CustomerResource {
   }
 
   @PUT
-  @Consumes("text/xml")
+  @Consumes(MediaType.TEXT_XML)
   public void createCustomer(Customer customer) {
     //in a "real" RESTful service, we would insert
     //a new row into the database with the data in the
@@ -65,7 +66,7 @@ public class CustomerResource {
   }
 
   @DELETE
-  @Consumes("text/xml")
+  @Consumes(MediaType.TEXT_XML)
   public void deleteCustomer(Customer customer) {
     //in a "real" RESTful service, we would delete a row
     //from the database corresponding to the customer parameter
