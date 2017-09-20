@@ -16,11 +16,8 @@ public class JsonPointerDemoService {
     @GET
     public String jsonPointerDemo() {
         initializeJsonString();
-        
         JsonReader jsonReader = Json.createReader(new StringReader(jsonString));
-        
         JsonArray jsonArray = jsonReader.readArray();
-        
         JsonPointer jsonPointer = Json.createPointer("/1/lastName");
         
         return jsonPointer.getValue(jsonArray).toString();
