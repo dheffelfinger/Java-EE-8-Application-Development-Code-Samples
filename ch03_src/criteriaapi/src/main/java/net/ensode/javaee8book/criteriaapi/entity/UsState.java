@@ -1,4 +1,4 @@
-package net.ensode.glassfishbook.criteriaapi.entity;
+package net.ensode.javaee8book.criteriaapi.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;

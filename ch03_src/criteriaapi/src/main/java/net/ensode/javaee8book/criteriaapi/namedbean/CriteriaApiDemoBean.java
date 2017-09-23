@@ -1,4 +1,4 @@
-package net.ensode.glassfishbook.criteriaapi.namedbean;
+package net.ensode.javaee8book.criteriaapi.namedbean;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,7 +16,7 @@ import javax.persistence.criteria.Root;
 import javax.persistence.metamodel.EntityType;
 import javax.persistence.metamodel.Metamodel;
 import javax.persistence.metamodel.SingularAttribute;
-import net.ensode.glassfishbook.criteriaapi.entity.UsState;
+import net.ensode.javaee8book.criteriaapi.entity.UsState;
 
 @Named
 @RequestScoped
