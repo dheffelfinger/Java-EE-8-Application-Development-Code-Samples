@@ -11,7 +11,6 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -24,9 +23,9 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "US_STATES")
-@NamedQueries({
-    @NamedQuery(name = "UsState.findAll", query = "SELECT u FROM UsState u")})
+@NamedQuery(name = "UsState.findAll", query = "SELECT u FROM UsState u")
 public class UsState implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -115,5 +114,5 @@ public class UsState implements Serializable {
     public String toString() {
         return "net.ensode.glassfishbook.criteriaupdate.entity.UsState[ usStateId=" + usStateId + " ]";
     }
-    
+
 }

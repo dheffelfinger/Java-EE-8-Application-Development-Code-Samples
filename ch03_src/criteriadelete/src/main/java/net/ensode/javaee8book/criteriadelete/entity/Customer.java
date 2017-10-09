@@ -24,9 +24,9 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "CUSTOMERS")
-@NamedQueries({
-    @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c")})
+@NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c")
 public class Customer implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -117,5 +117,5 @@ public class Customer implements Serializable {
     public String toString() {
         return "net.ensode.glassfishbook.criteriaupdate.entity.Customer[ customerId=" + customerId + " ]";
     }
-    
+
 }

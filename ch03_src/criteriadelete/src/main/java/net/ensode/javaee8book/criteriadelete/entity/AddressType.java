@@ -24,9 +24,9 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name = "ADDRESS_TYPES")
-@NamedQueries({
-    @NamedQuery(name = "AddressType.findAll", query = "SELECT a FROM AddressType a")})
+@NamedQuery(name = "AddressType.findAll", query = "SELECT a FROM AddressType a")
 public class AddressType implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -104,5 +104,5 @@ public class AddressType implements Serializable {
     public String toString() {
         return "net.ensode.glassfishbook.criteriaupdate.entity.AddressType[ addressTypeId=" + addressTypeId + " ]";
     }
-    
+
 }
