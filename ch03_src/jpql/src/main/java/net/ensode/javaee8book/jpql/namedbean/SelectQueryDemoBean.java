@@ -1,6 +1,8 @@
 package net.ensode.javaee8book.jpql.namedbean;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -15,6 +17,7 @@ public class SelectQueryDemoBean {
     @PersistenceContext
     private EntityManager entityManager;
 
+    private Stream<UsState> matchingStatesStream;
     private List<UsState> matchingStatesList;
 
     public String findStates() {
@@ -23,11 +26,17 @@ public class SelectQueryDemoBean {
         try {
             Query query = entityManager
                     .createQuery(
-                    "SELECT s FROM UsState s WHERE s.usStateNm "
-                    + "LIKE :name");
+                            "SELECT s FROM UsState s WHERE s.usStateNm "
+                            + "LIKE :name");
 
             query.setParameter("name", "New%");
-            matchingStatesList = query.getResultList();
+            
+            matchingStatesStream = query.getResultStream();
+
+            if (matchingStatesStream != null) {
+                matchingStatesList = matchingStatesStream.collect(Collectors.toList());
+            }
+
         } catch (Exception e) {
             retVal = "error";
             e.printStackTrace();
