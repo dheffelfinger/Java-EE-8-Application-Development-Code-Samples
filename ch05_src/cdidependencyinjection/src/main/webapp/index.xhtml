@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+  <h:head>
+    <title>Enter Customer Information</title>
+  </h:head>
+  <h:body>
+    <h:form>
+      <h:panelGrid columns="2">
+        <h:outputLabel for="firstName" value="First Name"/>
+        <h:inputText id="firstName" value="#{customer.firstName}"/>
+        <h:outputLabel for="lastName" value="Last Name"/>
+        <h:inputText id="lastName" value="#{customer.lastName}"/>
+        <h:outputLabel for="line1" value="Line 1"/>
+        <h:inputText id="line1" value="#{customer.address.line1}"/>
+        <h:outputLabel for="line2" value="Line 2"/>
+        <h:inputText id="line2" value="#{customer.address.line2}"/>
+        <h:outputLabel for="city" value="City"/>
+        <h:inputText id="city" value="#{customer.address.city}"/>
+        <h:outputLabel for="state" value="State"/>
+        <h:inputText id="state" value="#{customer.address.state}"/>
+         <h:outputLabel for="zip" value="Zip"/>
+        <h:inputText id="zip" value="#{customer.address.zip}"/>
+        <h:panelGroup/>
+        <h:commandButton value="Submit" action="#{customerSavior.saveCustomer}"/>
+      </h:panelGrid>
+    </h:form>
+  </h:body>
+</html>
+
