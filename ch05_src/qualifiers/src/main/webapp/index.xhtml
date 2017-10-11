@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Enter Customer Information</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="firstName" value="First Name"/>
+                <h:inputText id="firstName" value="#{premiumCustomer.firstName}"/>
+                <h:outputLabel for="lastName" value="Last Name"/>
+                <h:inputText id="lastName" value="#{premiumCustomer.lastName}"/>
+                <h:outputLabel for="discountCode" value="Discount Code"/>
+                <h:inputText id="discountCode" value="#{premiumCustomer.discountCode}"/>
+                <h:panelGroup/>
+                <h:commandButton value="Submit" action="#{customerController.saveCustomer}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
