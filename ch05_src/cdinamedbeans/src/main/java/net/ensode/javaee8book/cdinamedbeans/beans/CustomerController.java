@@ -1,4 +1,4 @@
-package net.ensode.javaee8book.cdidependencyinjection.beans;
+package net.ensode.javaee8book.cdinamedbeans.beans;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

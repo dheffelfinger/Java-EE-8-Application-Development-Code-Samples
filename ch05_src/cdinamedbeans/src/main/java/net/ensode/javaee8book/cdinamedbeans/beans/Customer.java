@@ -1,4 +1,4 @@
-package net.ensode.javaee8book.cdidependencyinjection.beans;
+package net.ensode.javaee8book.cdinamedbeans.beans;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
