@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Customer Information</title>
+    </h:head>
+    <h:body>
+        <h3>Enter Customer Information (Page 1 of 3)</h3>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="firstName" value="First Name"/>
+                <h:inputText id="firstName" value="#{customer.firstName}"/>
+                <h:outputLabel for="middleName" value="Middle Name"/>
+                <h:inputText id="middleName" value="#{customer.middleName}"/>
+                <h:outputLabel for="lastName" value="Last Name"/>
+                <h:inputText id="lastName" value="#{customer.lastName}"/>
+                <h:panelGroup/>
+                <h:commandButton value="Next"
+                                 action="#{customerInfoController.navigateToPage2}"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
