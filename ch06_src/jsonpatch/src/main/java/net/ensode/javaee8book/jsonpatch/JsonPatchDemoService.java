@@ -16,7 +16,7 @@ public class JsonPatchDemoService {
     private String jsonString;
 
     @GET
-    public Response jsonPointerDemo() {
+    public Response jsonPatchDemo() {
         initializeJsonString();
         JsonReader jsonReader = Json.createReader(new StringReader(jsonString));
         JsonArray jsonArray = jsonReader.readArray();
