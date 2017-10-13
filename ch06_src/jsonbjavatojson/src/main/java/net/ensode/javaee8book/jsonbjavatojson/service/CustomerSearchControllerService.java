@@ -15,6 +15,7 @@ import net.ensode.javaee8book.jsonbjavatojson.dto.Customer;
 
 @Path("/customersearchcontroller")
 public class CustomerSearchControllerService {
+    private final List<Customer> customerList = new ArrayList<>();
 
     @GET
     @Path("{firstName}")
@@ -35,7 +36,6 @@ public class CustomerSearchControllerService {
         return Response.ok(jsonString).build();
     }
 
-    private final List<Customer> customerList = new ArrayList<>();
 
     private void initializeCustomerList() {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
