@@ -5,7 +5,7 @@ import java.util.concurrent.Future;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.EJB;
-import net.ensode.glassfishbook.asynchronousmethods.AsynchronousSessionBeanRemote;
+import net.ensode.javaee8book.asynchronousmethods.AsynchronousSessionBeanRemote;
 
 public class App {
 
