@@ -42,7 +42,7 @@ public class DatabasePopulatorController {
             return true;
         } else {
             //userId property has a @NotNull validation, the value will be set by JPA before inserting into the database
-            //ignore this constraint since it will be dealt with.s
+            //ignore this constraint since it will be dealt with.
             if (constraintViolations.size() == 1) {
                 ConstraintViolation<User> constraintViolation = constraintViolations.iterator().next();
                 if (constraintViolation.getPropertyPath().toString().equals("userId")
