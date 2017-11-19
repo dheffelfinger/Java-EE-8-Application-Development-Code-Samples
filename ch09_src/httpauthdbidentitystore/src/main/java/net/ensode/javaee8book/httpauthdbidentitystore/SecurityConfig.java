@@ -17,14 +17,14 @@ import javax.sql.DataSource;
 
 @DataSourceDefinition(
         // global to circumvent https://java.net/jira/browse/GLASSFISH-21447
-        name = "java:global/MyDS2",
+        name = "java:global/authDS",
         className = "org.h2.jdbcx.JdbcDataSource",
         url = "jdbc:h2:~/test2;DB_CLOSE_ON_EXIT=FALSE"
 )
 @ApplicationScoped
 public class SecurityConfig {
 
-    @Resource(lookup = "java:global/MyDS2")
+    @Resource(lookup = "java:global/authDS")
     private DataSource dataSource;
 
     @Inject

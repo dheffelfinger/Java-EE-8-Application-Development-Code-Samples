@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 )
 
 @DatabaseIdentityStoreDefinition(
-        dataSourceLookup = "java:global/MyDS2",
+        dataSourceLookup = "java:global/authDS",
         callerQuery = "select password from users where USERNAME = ?",
         groupsQuery = "select g.GROUP_NAME from USER_GROUPS ug, users u, GROUPS g where ug.USER_ID = u.user_id and g.GROUP_ID= ug.GROUP_ID and u.USERNAME=?",
         hashAlgorithm = Pbkdf2PasswordHash.class,
