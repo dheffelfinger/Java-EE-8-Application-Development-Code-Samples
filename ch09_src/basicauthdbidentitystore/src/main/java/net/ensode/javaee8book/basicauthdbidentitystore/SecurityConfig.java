@@ -10,6 +10,8 @@ import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 import javax.annotation.sql.DataSourceDefinition;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.Initialized;
+import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.security.enterprise.identitystore.Pbkdf2PasswordHash;
 import javax.sql.DataSource;
@@ -29,8 +31,7 @@ public class SecurityConfig {
     @Inject
     private Pbkdf2PasswordHash passwordHash;
 
-    @PostConstruct
-    public void init() {
+    public void init(@Observes @Initialized(ApplicationScoped.class) Object init) {
         try {
             Map<String, String> parameters = new HashMap<>();
             parameters.put("Pbkdf2PasswordHash.Iterations", "3072");
