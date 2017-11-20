@@ -38,15 +38,5 @@ public class SecuredServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.getWriter().write("Congratulations, login successful.");
-        
-         String webName = null;
-        if (request.getUserPrincipal() != null) {
-            webName = request.getUserPrincipal().getName();
-        }
-
-        response.getWriter().write("web username: " + webName + "\n");
-
-        response.getWriter().write("web user has role \"user\": " + request.isUserInRole("user") + "\n");
-        response.getWriter().write("web user has role \"admin\": " + request.isUserInRole("admin") + "\n");
     }
 }
